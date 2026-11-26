@@ -152,7 +152,7 @@ nav {
   gap: 10px;
   text-decoration: none;
 }
-.nav-logo-mark { height: 32px; width: auto; }
+.nav-logo-mark { height: 28px; width: auto; }
 .nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a {
   text-decoration: none;
@@ -172,6 +172,22 @@ nav {
   transition: all 0.2s !important;
 }
 .nav-cta:hover { background: var(--royal-dark) !important; }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--ink);
+}
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--ink);
+  margin: 4px 0;
+  transition: all 0.3s;
+}
 
 /* ===== HERO ===== */
 .hero {
@@ -415,7 +431,11 @@ section { padding: 80px 24px; }
   padding: 36px 28px;
   position: relative;
   transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
 }
+.package ul { flex: 1; }
+.package .btn-primary { margin-top: auto; }
 .package:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
 .package.featured {
   border-color: var(--royal);
@@ -679,8 +699,33 @@ footer a { color: rgba(247,246,243,0.6); text-decoration: none; }
   .about-grid { grid-template-columns: 1fr; }
   .about-photo { max-height: 300px; }
   .contact-grid { grid-template-columns: 1fr; }
-  .nav-links a:not(.nav-cta) { display: none; }
   .section-title { font-size: 1.8rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(247,246,243,0.98);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: 16px 24px 24px;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+  }
+  .nav-links a:last-child { border-bottom: none; }
+  .nav-cta {
+    margin-top: 8px !important;
+    text-align: center !important;
+    padding: 12px 22px !important;
+  }
 }
 @media (max-width: 480px) {
   .hero-text h1 { font-size: 2rem; }
@@ -709,12 +754,15 @@ footer a { color: rgba(247,246,243,0.6); text-decoration: none; }
     <a href="#" class="nav-logo">
       <img src="logo.png" alt="Linus C Fitness" class="nav-logo-mark">
     </a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
     <div class="nav-links">
-      <a href="#approach">Approach</a>
-      <a href="#about">About</a>
-      <a href="#packages">Packages</a>
-      <a href="#areas">Areas</a>
-      <a href="#contact" class="nav-cta">Get Started</a>
+      <a href="#method" onclick="document.querySelector('.nav-links').classList.remove('open')">Method</a>
+      <a href="#about" onclick="document.querySelector('.nav-links').classList.remove('open')">About</a>
+      <a href="#packages" onclick="document.querySelector('.nav-links').classList.remove('open')">Packages</a>
+      <a href="#locations" onclick="document.querySelector('.nav-links').classList.remove('open')">Locations</a>
+      <a href="#contact" class="nav-cta" onclick="document.querySelector('.nav-links').classList.remove('open')">Get Started</a>
     </div>
   </div>
 </nav>
@@ -731,7 +779,7 @@ footer a { color: rgba(247,246,243,0.6); text-decoration: none; }
     <p>Personalised fitness, lifestyle and mindset coaching, built around your life. I come to you across central and southwest Singapore, or coach you online from anywhere.</p>
     <div class="hero-ctas">
       <a href="https://wa.me/6591386141?text=Hi%20Linus!%20I'm%20interested%20in%20personal%20training." class="btn-primary">WhatsApp Me</a>
-      <a href="#approach" class="btn-secondary">See How I Coach</a>
+      <a href="#method" class="btn-secondary">See How I Coach</a>
     </div>
   </div>
   <div class="hero-visual">
@@ -743,9 +791,9 @@ footer a { color: rgba(247,246,243,0.6); text-decoration: none; }
 </header>
 
 <!-- APPROACH -->
-<section id="approach">
+<section id="method">
   <div class="section-inner">
-    <div class="section-label">My Approach</div>
+    <div class="section-label">The Method</div>
     <h2 class="section-title">Three pillars. One transformation.</h2>
     <p class="section-subtitle">I don't just write workouts. I coach the whole person: training, lifestyle, and the mindset that makes it all stick.</p>
     <div class="pillars">
@@ -906,9 +954,9 @@ footer a { color: rgba(247,246,243,0.6); text-decoration: none; }
 </section>
 
 <!-- SERVICE AREAS -->
-<section id="areas">
+<section id="locations">
   <div class="section-inner">
-    <div class="section-label">Service Areas</div>
+    <div class="section-label">Locations</div>
     <h2 class="section-title">Training where it suits you</h2>
     <p class="section-subtitle">In-person training across central and southwest Singapore. Online coaching available anywhere.</p>
     <div class="area-tags">
