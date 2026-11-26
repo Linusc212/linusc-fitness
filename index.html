@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linus C Fitness | Personal Trainer Singapore — In-Person & Online Coaching</title>
+<meta name="description" content="Linus C Fitness — NCSF, TRX and ISA certified personal trainer in Singapore offering 1-on-1 in-person training (home visits, condo gyms) and online coaching. Fitness, lifestyle and mindset coaching across Ang Mo Kio, Bishan, Buona Vista, West Coast and CBD.">
+<meta name="keywords" content="personal trainer Singapore, personal training Singapore, online fitness coach Singapore, home visit personal trainer, condo gym trainer Singapore, Linus C Fitness, fitness coach Bishan, personal trainer CBD Singapore, lifestyle coaching Singapore, TRX trainer Singapore, prenatal fitness Singapore, postnatal fitness Singapore">
+<meta name="author" content="Linus C Fitness">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://linus-c-fitness.vercel.app">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Linus C Fitness | Personal Trainer Singapore">
+<meta property="og:description" content="NCSF, TRX and ISA certified personal trainer offering 1-on-1 in-person and online coaching across Singapore. Fitness, lifestyle and mindset, built around your life.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://linus-c-fitness.vercel.app">
+<meta property="og:locale" content="en_SG">
+<meta property="og:site_name" content="Linus C Fitness">
+<meta property="og:image" content="https://linus-c-fitness.vercel.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Linus C Fitness, personal trainer in Singapore">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Linus C Fitness | Personal Trainer Singapore">
+<meta name="twitter:description" content="NCSF, TRX and ISA certified personal trainer offering 1-on-1 in-person and online coaching across Singapore.">
+<meta name="twitter:image" content="https://linus-c-fitness.vercel.app/og-image.jpg">
+
+<!-- Schema.org Structured Data for Local SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Linus C Fitness",
+  "description": "NCSF, TRX and ISA certified personal trainer in Singapore offering personalised 1-on-1 in-person training (home visits, condo gyms) and online coaching. Specialising in fitness, lifestyle and mindset coaching, including pre and postnatal fitness.",
+  "url": "https://linus-c-fitness.vercel.app",
+  "telephone": "+65-9138-6141",
+  "email": "linusc212@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Singapore",
+    "addressCountry": "SG"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Singapore"},
+    {"@type": "Place", "name": "Ang Mo Kio"},
+    {"@type": "Place", "name": "Bishan"},
+    {"@type": "Place", "name": "Alexandra"},
+    {"@type": "Place", "name": "Buona Vista"},
+    {"@type": "Place", "name": "West Coast"},
+    {"@type": "Place", "name": "Central Business District"}
+  ],
+  "priceRange": "$$",
+  "openingHours": "Mo-Sa 06:00-21:00",
+  "image": "https://linus-c-fitness.vercel.app/og-image.jpg",
+  "sameAs": [
+    "https://www.instagram.com/linuscfitness",
+    "https://wa.me/6591386141"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Personal Training Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Online Coaching — Essentials",
+        "description": "Customised training program, basic lifestyle coaching, bi-weekly check-ins"
+      },
+      {
+        "@type": "Offer",
+        "name": "Online Coaching — Signature",
+        "description": "Full training program, habit-stacking programme, weekly check-ins, mindset prompts"
+      },
+      {
+        "@type": "Offer",
+        "name": "In-Person Training Session",
+        "description": "1-on-1 personal training at your location across Singapore"
+      }
+    ]
+  },
+  "knowsAbout": [
+    "Personal Training",
+    "TRX Suspension Training",
+    "Prenatal Fitness",
+    "Postnatal Fitness",
+    "Lifestyle Coaching",
+    "Online Coaching"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #0E1A2C;
+  --paper: #F7F6F3;
+  --warm: #EEF2F7;
+  --royal: #4E6E8E;
+  --cobalt: #7A9DB8;
+  --royal-light: #EDF1F5;
+  --royal-dark: #3A5570;
+  --accent: #4E6E8E;
+  --accent-light: #EDF1F5;
+  --accent-dark: #3A5570;
+  --sage: #7A9DB8;
+  --sage-light: #EDF1F5;
+  --muted: #6B7A8A;
+  --border: #D6DDE4;
+  --card: #ffffff;
+  --shadow: 0 1px 3px rgba(14,26,44,0.04), 0 4px 16px rgba(14,26,44,0.06);
+  --shadow-lg: 0 8px 40px rgba(14,26,44,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(247,246,243,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-logo-mark { height: 32px; width: auto; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.88rem;
+  letter-spacing: 0.2px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  background: var(--royal) !important;
+  color: var(--paper) !important;
+  padding: 9px 22px !important;
+  border-radius: 6px;
+  font-weight: 600 !important;
+  transition: all 0.2s !important;
+}
+.nav-cta:hover { background: var(--royal-dark) !important; }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 140px 24px 100px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero-text h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.hero-text h1 em {
+  font-style: italic;
+  color: var(--royal);
+}
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 480px;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+.hero-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.badge-royal { background: var(--royal-light); color: var(--royal); }
+.badge-cobalt { background: #E0EBF5; color: var(--cobalt); }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--royal);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--royal-dark); transform: translateY(-1px); box-shadow: var(--shadow); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--border);
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: var(--ink); }
+
+.hero-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, var(--warm) 0%, #D4DEE8 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-visual-placeholder {
+  text-align: center;
+  padding: 40px;
+  color: var(--muted);
+}
+.hero-visual-placeholder .icon { font-size: 3rem; margin-bottom: 12px; }
+.hero-visual-placeholder p { font-size: 0.85rem; }
+
+/* ===== SECTIONS ===== */
+section { padding: 80px 24px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--royal);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  color: var(--ink);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+/* ===== APPROACH (3 pillars) ===== */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pillar {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.pillar:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+.pillar:nth-child(1)::before { background: var(--royal); }
+.pillar:nth-child(2)::before { background: var(--cobalt); }
+.pillar:nth-child(3)::before { background: #3B6FA0; }
+.pillar-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--royal);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.pillar:nth-child(1) .pillar-icon { background: var(--royal-light); }
+.pillar:nth-child(2) .pillar-icon { background: #E0EBF5; }
+.pillar:nth-child(3) .pillar-icon { background: #E0E8F0; }
+.pillar h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.pillar p { color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
+
+/* ===== SERVICES ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  transition: all 0.25s;
+}
+.service-card:hover { box-shadow: var(--shadow); }
+.service-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.service-card .service-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.tag-person { background: var(--royal-light); color: var(--royal); }
+.tag-online { background: #E0EBF5; color: var(--cobalt); }
+.service-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 16px; line-height: 1.6; }
+.service-card ul { list-style: none; padding: 0; }
+.service-card li {
+  padding: 6px 0;
+  font-size: 0.88rem;
+  color: var(--ink);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.service-card li::before {
+  content: '\2713';
+  color: var(--cobalt);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ===== PACKAGES / PRICING ===== */
+#packages { background: var(--warm); }
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.package {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px 28px;
+  position: relative;
+  transition: all 0.25s;
+}
+.package:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.package.featured {
+  border-color: var(--royal);
+  box-shadow: 0 0 0 1px var(--royal);
+}
+.package-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--royal);
+  color: #fff;
+  padding: 4px 16px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.package-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.package-type {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.package-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.package-price span { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
+.package-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.package ul { list-style: none; padding: 0; margin-bottom: 28px; }
+.package li {
+  padding: 7px 0;
+  font-size: 0.88rem;
+  color: var(--ink);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.package li::before {
+  content: '\2713';
+  color: var(--cobalt);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.package .btn-primary { width: 100%; justify-content: center; }
+
+/* ===== AREAS ===== */
+.areas-flex {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+.areas-list { flex: 1; }
+.areas-map {
+  flex: 1;
+  aspect-ratio: 4/3;
+  background: var(--warm);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 40px;
+}
+.area-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.area-tag {
+  padding: 10px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+.area-tag:hover { border-color: var(--royal); background: var(--royal-light); }
+
+/* ===== ABOUT ===== */
+#about { background: var(--warm); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+}
+.about-photo {
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #D4DEE8 0%, #C4D0DC 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  text-align: center;
+  padding: 40px;
+}
+.about-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+.about-text p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+.about-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background: var(--royal-light);
+  color: var(--royal);
+  border: 1px solid var(--border);
+}
+.about-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--royal);
+}
+.stat-label { font-size: 0.8rem; color: var(--muted); }
+
+/* ===== HOW IT WORKS ===== */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.step {
+  text-align: center;
+  padding: 28px 20px;
+}
+.step-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--royal);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+.step h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.step p { font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+
+/* ===== CONTACT / CTA ===== */
+#contact {
+  background: var(--ink);
+  color: var(--paper);
+}
+#contact .section-label { color: var(--cobalt); }
+#contact .section-title { color: var(--paper); }
+#contact .section-subtitle { color: rgba(247,246,243,0.6); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.contact-method {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+  transition: all 0.25s;
+}
+.contact-method:hover { background: rgba(255,255,255,0.1); }
+.contact-icon { font-size: 1.5rem; margin-bottom: 12px; }
+.contact-method h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 6px; }
+.contact-method p { color: rgba(247,246,243,0.6); font-size: 0.88rem; margin-bottom: 16px; }
+.contact-method a {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.whatsapp-btn { background: #25D366; color: #fff; }
+.whatsapp-btn:hover { background: #1da851; }
+.email-btn { background: rgba(255,255,255,0.12); color: var(--paper); border: 1px solid rgba(255,255,255,0.2); }
+.email-btn:hover { background: rgba(255,255,255,0.2); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--ink);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 32px 24px;
+  text-align: center;
+  color: rgba(247,246,243,0.4);
+  font-size: 0.8rem;
+}
+footer a { color: rgba(247,246,243,0.6); text-decoration: none; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; padding: 120px 24px 60px; gap: 40px; }
+  .hero-text h1 { font-size: 2.4rem; }
+  .hero-visual { max-height: 350px; }
+  .pillars, .services-grid, .packages-grid, .steps { grid-template-columns: 1fr; }
+  .areas-flex { flex-direction: column; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo { max-height: 300px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .section-title { font-size: 1.8rem; }
+}
+@media (max-width: 480px) {
+  .hero-text h1 { font-size: 2rem; }
+  .hero-ctas { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .about-stats { flex-wrap: wrap; gap: 20px; }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-text { animation: fadeUp 0.7s ease-out; }
+.hero-visual { animation: fadeUp 0.7s ease-out 0.15s both; }
+.pillar:nth-child(1) { animation: fadeUp 0.5s ease-out 0.1s both; }
+.pillar:nth-child(2) { animation: fadeUp 0.5s ease-out 0.2s both; }
+.pillar:nth-child(3) { animation: fadeUp 0.5s ease-out 0.3s both; }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="logo.png" alt="Linus C Fitness" class="nav-logo-mark">
+    </a>
+    <div class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+      <a href="#packages">Packages</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact" class="nav-cta">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-text">
+    <div class="hero-badges">
+      <span class="badge badge-royal">NCSF Certified</span>
+      <span class="badge badge-cobalt">TRX Specialist</span>
+      <span class="badge badge-royal">Pre/Postnatal Certified</span>
+    </div>
+    <h1>Get fit, stay strong, <em>feel&nbsp;great.</em></h1>
+    <p>Personalised fitness, lifestyle and mindset coaching, built around your life. I come to you across central and southwest Singapore, or coach you online from anywhere.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/6591386141?text=Hi%20Linus!%20I'm%20interested%20in%20personal%20training." class="btn-primary">WhatsApp Me</a>
+      <a href="#approach" class="btn-secondary">See How I Coach</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-visual-placeholder">
+      <p style="font-size: 1.2rem; margin-bottom: 8px; font-weight: 500;">Photo</p>
+      <p>Add your professional photo here<br><small>(Recommended: 800x1000px portrait)</small></p>
+    </div>
+  </div>
+</header>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="section-inner">
+    <div class="section-label">My Approach</div>
+    <h2 class="section-title">Three pillars. One transformation.</h2>
+    <p class="section-subtitle">I don't just write workouts. I coach the whole person: training, lifestyle, and the mindset that makes it all stick.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">01</div>
+        <h3>Fitness</h3>
+        <p>Customised training programmes designed in 4 to 6 week blocks with progressive overload built in. Whether you train at your condo gym, at home, or at a commercial gym, every session has purpose.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">02</div>
+        <h3>Lifestyle</h3>
+        <p>No crash diets or rigid meal plans. I help you build sustainable daily habits around eating, sleep, and recovery, one at a time, until your lifestyle supports your goals without taking over your life.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">03</div>
+        <h3>Mindset</h3>
+        <p>Consistency beats intensity. Through weekly reflection prompts, accountability check-ins, and real conversation, I help you build the mental habits that keep you going long after motivation fades.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-text" style="max-width: 720px;">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Hey, I'm Linus.</h2>
+      <p>I'm a certified personal trainer based in Singapore, and I believe fitness should be built around your life, not the other way around.</p>
+      <p>I work with busy adults who want to get stronger, feel better, and build habits that actually last. My approach combines evidence-based training, sustainable lifestyle habits, and the mindset coaching that makes it all stick.</p>
+      <p>Whether I'm meeting you at your condo gym or coaching you online from wherever you are, my job is the same: help you show up consistently, train with purpose, and feel proud of the body you're building.</p>
+      <div class="about-certs">
+        <span class="cert-badge">NCSF Certified Personal Trainer</span>
+        <span class="cert-badge">TRX Suspension Training Specialist</span>
+        <span class="cert-badge">ISA Pregnant & Postpartum Exercise Specialist</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" style="background: var(--warm);">
+  <div class="section-inner">
+    <div class="section-label">Packages</div>
+    <h2 class="section-title">Commit to the process. The results will follow.</h2>
+    <p class="section-subtitle">Every package is built around your goals, your schedule, and the full coaching approach. Message me for a personalised quote.</p>
+
+    <div style="margin-bottom: 16px;">
+      <div class="section-label" style="margin-bottom: 20px; font-size: 0.7rem; color: var(--royal);">In-Person Training · 1-on-1 or Buddy</div>
+    </div>
+    <div class="packages-grid" style="margin-bottom: 48px;">
+      <div class="package">
+        <div class="package-name">12 Sessions</div>
+        <div class="package-type">In-Person · Start here</div>
+        <div class="package-note">Valid 4 months · 60 minutes per session</div>
+        <ul>
+          <li>Available as 1-on-1 or buddy (2 pax)</li>
+          <li>Customised programme with progression</li>
+          <li>I travel to your location</li>
+          <li>Form correction and technique coaching</li>
+        </ul>
+        <a href="https://wa.me/6591386141?text=Hi%20Linus%2C%20I'd%20like%20to%20find%20out%20more%20about%20your%20training%20packages." class="btn-primary">Enquire Now</a>
+      </div>
+      <div class="package featured">
+        <div class="package-badge">Recommended</div>
+        <div class="package-name">25 Sessions</div>
+        <div class="package-type">In-Person · Most popular</div>
+        <div class="package-note">Valid 8 months · 60 minutes per session</div>
+        <ul>
+          <li>Available as 1-on-1 or buddy (2 pax)</li>
+          <li>Everything in 12 sessions, plus:</li>
+          <li>Lifestyle guidance included</li>
+          <li>Goal alignment and progress reviews</li>
+        </ul>
+        <a href="https://wa.me/6591386141?text=Hi%20Linus%2C%20I'd%20like%20to%20find%20out%20more%20about%20your%20training%20packages." class="btn-primary">Enquire Now</a>
+      </div>
+      <div class="package">
+        <div class="package-name">50 Sessions</div>
+        <div class="package-type">In-Person · Full commitment</div>
+        <div class="package-note">Valid 15 months · 60 minutes per session</div>
+        <ul>
+          <li>Available as 1-on-1 or buddy (2 pax)</li>
+          <li>Full coaching approach included</li>
+          <li>Lifestyle and mindset coaching</li>
+          <li>Priority WhatsApp support</li>
+          <li>Split payment available</li>
+        </ul>
+        <a href="https://wa.me/6591386141?text=Hi%20Linus%2C%20I'd%20like%20to%20find%20out%20more%20about%20your%20training%20packages." class="btn-primary">Enquire Now</a>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <div class="section-label" style="margin-bottom: 20px; font-size: 0.7rem; color: var(--cobalt);">In-Person · Pre and Postnatal</div>
+    </div>
+    <div class="packages-grid" style="margin-bottom: 24px;">
+      <div class="package">
+        <div class="package-name">6 Sessions</div>
+        <div class="package-type">Prenatal / Postnatal · Starter</div>
+        <div class="package-note">Valid 3 months · 60 minutes per session</div>
+        <ul>
+          <li>ISA certified programming</li>
+          <li>Trimester or recovery-specific training</li>
+          <li>Coordinated with your healthcare provider</li>
+        </ul>
+        <a href="https://wa.me/6591386141?text=Hi%20Linus%2C%20I'd%20like%20to%20find%20out%20more%20about%20your%20training%20packages." class="btn-primary">Enquire Now</a>
+      </div>
+      <div class="package featured">
+        <div class="package-badge">Recommended</div>
+        <div class="package-name">12 Sessions</div>
+        <div class="package-type">Prenatal / Postnatal</div>
+        <div class="package-note">Valid 5 months · 60 minutes per session</div>
+        <ul>
+          <li>Everything in 6 sessions, plus:</li>
+          <li>Core and pelvic floor focus</li>
+          <li>Progressive programming across phases</li>
+        </ul>
+        <a href="https://wa.me/6591386141?text=Hi%20Linus%2C%20I'd%20like%20to%20find%20out%20more%20about%20your%20training%20packages." class="btn-primary">Enquire Now</a>
+      </div>
+      <div class="package">
+        <div class="package-name">20 Sessions</div>
+        <div class="package-type">Prenatal / Postnatal · Full journey</div>
+        <div class="package-note">Valid 8 months · 60 minutes per session</div>
+        <ul>
+          <li>Full pregnancy to postpartum support</li>
+          <li>Return to strength programming</li>
+          <li>Priority WhatsApp support</li>
+        </ul>
+        <a href="https://wa.me/6591386141?text=Hi%20Linus%2C%20I'd%20like%20to%20find%20out%20more%20about%20your%20training%20packages." class="btn-primary">Enquire Now</a>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 16px; margin-top: 48px;">
+      <div class="section-label" style="margin-bottom: 20px; font-size: 0.7rem; color: var(--cobalt);">Online Coaching</div>
+    </div>
+    <div style="max-width: 540px; margin-bottom: 24px;">
+      <div class="package">
+        <div class="package-name">Online Coaching</div>
+        <div class="package-type">Remote · Train from anywhere</div>
+        <div class="package-note">Monthly programme tailored to your goals</div>
+        <ul>
+          <li>Customised training programme (updated monthly)</li>
+          <li>Lifestyle coaching via habit-stacking</li>
+          <li>Weekly check-ins and programme adjustments</li>
+          <li>Mindset prompts and progress reviews</li>
+          <li>Exercise video library for every movement</li>
+          <li>WhatsApp access for questions and accountability</li>
+        </ul>
+        <a href="https://wa.me/6591386141?text=Hi%20Linus%2C%20I'd%20like%20to%20find%20out%20more%20about%20your%20training%20packages." class="btn-primary">Enquire Now</a>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 24px; background: var(--card); border-radius: 12px; border: 1px solid var(--border);">
+      <p style="color: var(--muted); font-size: 0.9rem;">
+        <strong style="color: var(--ink);">All packages include</strong> initial assessment, body measurement tracking, goal alignment reviews, form correction, progressive programming, and between-session support.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section id="areas">
+  <div class="section-inner">
+    <div class="section-label">Service Areas</div>
+    <h2 class="section-title">Training where it suits you</h2>
+    <p class="section-subtitle">In-person training across central and southwest Singapore. Online coaching available anywhere.</p>
+    <div class="area-tags">
+      <div class="area-tag">Central Singapore</div>
+      <div class="area-tag">Southwest Singapore</div>
+      <div class="area-tag">CBD and Downtown</div>
+      <div class="area-tag">Orchard and River Valley</div>
+    </div>
+    <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.65;">I train clients at condo gyms, home setups, and public facilities. If your area isn't listed, just ask. I may be able to accommodate. Online coaching is available regardless of location.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section id="process">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">From enquiry to Day 1 in under a week</h2>
+    <p class="section-subtitle">Getting started is simple. No pressure, no hard sell, just a conversation about your goals.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Reach Out</h4>
+        <p>Message me on WhatsApp. Tell me about your goals, experience, and what you're looking for.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Quick Chat</h4>
+        <p>We'll have a short conversation to make sure I'm the right fit for you. No obligations.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Questionnaire</h4>
+        <p>Complete a short intake form so I can design your personalised programme across fitness, habits, and mindset.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Let's Go</h4>
+        <p>Your programme is ready. Whether it's your first in-person session or Day 1 on the app, we're off.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <div class="section-label">Get Started</div>
+      <h2 class="section-title">Ready to make a change?</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">The first step is a conversation. No pressure, no commitment, just tell me what you're working towards and I'll let you know how I can help.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-method">
+        <div class="contact-icon" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700;">W</div>
+        <h4>WhatsApp</h4>
+        <p>The fastest way to reach me. Drop me a message anytime.</p>
+        <a href="https://wa.me/6591386141?text=Hi%20Linus!%20I'm%20interested%20in%20personal%20training." class="whatsapp-btn">Message on WhatsApp</a>
+      </div>
+      <div class="contact-method">
+        <div class="contact-icon" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700;">E</div>
+        <h4>Email</h4>
+        <p>Prefer email? I'll get back to you within 24 hours.</p>
+        <a href="mailto:linusc212@gmail.com" class="email-btn">linusc212@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Linus C Fitness · Personal Trainer Singapore · <a href="https://www.instagram.com/linuscfitness">Instagram</a></p>
+  <p style="margin-top: 8px;">In-Person Training: Central and Southwest Singapore · Online Coaching: Worldwide</p>
+</footer>
+
+</body>
+</html>
