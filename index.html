@@ -639,6 +639,45 @@ section { padding: 80px 24px; }
 }
 .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
 
+/* ===== REVIEWS ===== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+}
+.review-stars {
+  color: #C9A84C;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.review-text {
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.7;
+  font-style: italic;
+  flex: 1;
+  margin-bottom: 20px;
+}
+.review-author {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+.review-since {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
 /* ===== CONTACT / CTA ===== */
 #contact {
   background: var(--ink);
@@ -694,7 +733,7 @@ footer a { color: rgba(247,246,243,0.6); text-decoration: none; }
   .hero { grid-template-columns: 1fr; padding: 120px 24px 60px; gap: 40px; }
   .hero-text h1 { font-size: 2.4rem; }
   .hero-visual { max-height: 350px; }
-  .pillars, .services-grid, .packages-grid, .steps { grid-template-columns: 1fr; }
+  .pillars, .services-grid, .packages-grid, .steps, .reviews-grid { grid-template-columns: 1fr; }
   .areas-flex { flex-direction: column; }
   .about-grid { grid-template-columns: 1fr; }
   .about-photo { max-height: 300px; }
@@ -826,6 +865,32 @@ footer a { color: rgba(247,246,243,0.6); text-decoration: none; }
         <span class="cert-badge">NCSF Certified Personal Trainer</span>
         <span class="cert-badge">TRX Suspension Training Specialist</span>
         <span class="cert-badge">ISA Pregnant & Postpartum Exercise Specialist</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT REVIEWS -->
+<section id="reviews" style="background: var(--warm);">
+  <div class="section-inner">
+    <div class="section-label">Client Reviews</div>
+    <h2 class="section-title">What clients are saying</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"I'm quite happy with the progress so far. I feel (and look haha) a lot healthier. This is probably the first time ever that I've been able to exercise regularly, so I really appreciate the constant reassurance and pep talks, and also for always trying to explain new exercises in different ways when I don't get it initially. Looking forward to achieving an even better body, both in function and form!"</p>
+        <div>
+          <div class="review-author">Cherry M.</div>
+          <div class="review-since">Training since January 2025</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Linus is an attentive and knowledgeable instructor who knows how to adjust the workouts to optimise each training session. He is approachable, easy to talk to and always tactfully encouraging."</p>
+        <div>
+          <div class="review-author">Melvin</div>
+          <div class="review-since">Training since July 2025</div>
+        </div>
       </div>
     </div>
   </div>
